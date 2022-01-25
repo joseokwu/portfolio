@@ -17,20 +17,22 @@ const Hero = () => {
             have built (and continue to build) quite a few projects to emphasize
             my capabilities. Feel free to view these interesting projects below.
           </p>
-          <a
-            href='https://github.com/joseokwu'
-            target='_blank'
-            rel='noreferrer'
-            className='btn hero-btn'
-          >
-            Visit My Github
-          </a>
-          <a
-            href='mailto:okwuosaifechidelu@gmail.com'
-            className='btn hero-btn extra'
-          >
-            Contact Me
-          </a>
+          <div className='links'>
+            <a
+              href='https://github.com/joseokwu'
+              target='_blank'
+              rel='noreferrer'
+              className='btn hero-btn'
+            >
+              Visit My Github
+            </a>
+            <a
+              href='mailto:okwuosaifechidelu@gmail.com'
+              className='btn hero-btn'
+            >
+              Contact Me
+            </a>
+          </div>
         </div>
         <img src={heroImg1} alt='web development' className='img' />
       </div>
@@ -57,6 +59,16 @@ const Wrapper = styled.div`
     border-radius: var(--borderRadius);
     margin-top: 1.5rem;
   }
+  .tag h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+  }
+  .tag h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: normal;
+  }
   @media (min-width: 992px) {
     min-height: 60vh;
 
@@ -68,6 +80,14 @@ const Wrapper = styled.div`
     }
     img {
       display: block;
+    }
+    .tag h4 {
+      font-size: 1.563rem;
+      letter-spacing: var(--letterSpacing);
+    }
+    .tag h5 {
+      font-size: 1.25rem;
+      letter-spacing: var(--letterSpacing);
     }
   }
   .hero-title h1 {
@@ -100,9 +120,9 @@ const Wrapper = styled.div`
     box-shadow: var(--shadow-1);
     animation: bounce 2s infinite;
   }
-  .extra {
-    margin-left: 11rem;
-    margin-right: 0;
+  .links {
+    display: flex;
+    justify-content: space-between;
   }
   .hero-btn:hover {
     background: transparent;
