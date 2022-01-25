@@ -7,7 +7,6 @@ const Hero = () => {
     <Wrapper>
       <div className='hero-center'>
         <div className='hero-title'>
-          <h1>My Portfolio</h1>
           <div className='tag'>
             <h4>Name: Josemaria Okwuosa</h4>
             <h5>Skill: Full Stack Developer(Javascript)</h5>
@@ -15,7 +14,7 @@ const Hero = () => {
           <p>
             Projects are the most practical way to show skill. With
             <span> React, NodeJS, ExpressJS, MongoDB </span>and many others, I
-            have built (and continue to build) quite a few projects to emphasis
+            have built (and continue to build) quite a few projects to emphasize
             my capabilities. Feel free to view these interesting projects below.
           </p>
           <a
@@ -25,6 +24,12 @@ const Hero = () => {
             className='btn hero-btn'
           >
             Visit My Github
+          </a>
+          <a
+            href='mailto:okwuosaifechidelu@gmail.com'
+            className='btn hero-btn extra'
+          >
+            Contact Me
           </a>
         </div>
         <img src={heroImg1} alt='web development' className='img' />
@@ -39,7 +44,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
+  padding: 2rem 0;
   img {
     display: none;
   }
@@ -94,6 +99,10 @@ const Wrapper = styled.div`
     padding: 0.75rem 1.25rem;
     box-shadow: var(--shadow-1);
     animation: bounce 2s infinite;
+  }
+  .extra {
+    margin-left: 11rem;
+    margin-right: 0;
   }
   .hero-btn:hover {
     background: transparent;

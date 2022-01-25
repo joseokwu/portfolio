@@ -14,11 +14,17 @@ import RegularProjects from './RegularProjects';
 import Menu from './Menu';
 const Projects = () => {
   const [state, setState] = useState('front-end');
+  const [loading, setLoading] = useState();
 
   const changePortfolio = (id) => {
+    setLoading(true);
     setState(id);
+    setLoading(false);
   };
 
+  if (loading) {
+    return <div className='loading'></div>;
+  }
   if (state === 'front-end') {
     return (
       <Wrapper>
