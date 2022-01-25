@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import heroImg1 from '../assets/hero-1.svg';
+import { BiFace } from 'react-icons/bi';
+import { FaDesktop } from 'react-icons/fa';
 
 const Hero = () => {
   return (
@@ -8,8 +10,18 @@ const Hero = () => {
       <div className='hero-center'>
         <div className='hero-title'>
           <div className='tag'>
-            <h4>Name: Josemaria Okwuosa</h4>
-            <h5>Skill: Full Stack Developer(Javascript)</h5>
+            <h4>
+              Josemaria Okwuosa{' '}
+              <span>
+                <BiFace />
+              </span>
+            </h4>
+            <h5>
+              Full Stack Developer(Javascript)
+              <span>
+                <FaDesktop />
+              </span>
+            </h5>
           </div>
           <p>
             Projects are the most practical way to show skill. With
@@ -60,13 +72,13 @@ const Wrapper = styled.div`
     margin-top: 1.5rem;
   }
   .tag h4 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.15rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
   }
   .tag h5 {
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: normal;
   }
   @media (min-width: 992px) {
