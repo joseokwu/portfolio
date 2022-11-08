@@ -117,9 +117,9 @@ const Wrapper = styled.div`
     width: 90vw;
     max-width: var(--max-width);
     .hero-left {
+      margin-top: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
     }
     .details {
       font-size: 1rem;
@@ -158,6 +158,9 @@ const Wrapper = styled.div`
       grid-template-columns: 1fr 1fr;
       place-items: center;
       gap: 2rem;
+      .hero-left {
+        gap: 2rem;
+      }
     }
     img {
       display: block;

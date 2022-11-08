@@ -25,17 +25,7 @@ const FormWithBtns = ({
       <label htmlFor=''>{buttonsLabel}</label>
       <span className='career-buttons'>
         {btnData.map((btn, index) => {
-          return (
-            <BtnOutline
-              title={btn}
-              key={index}
-              onClick={(e) => handleBtns(btn, e)}
-              backgroundColor={
-                selectedOptions?.includes(btn) ? 'rgba(242, 101, 34, 0.3)' : ''
-              }
-              borderColor={selectedOptions?.includes(btn) ? 'orange' : ''}
-            />
-          );
+          return <BtnOutline title={btn} key={index} />;
         })}
       </span>
     </Wrapper>

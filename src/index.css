@@ -160,7 +160,7 @@ button,
 }
 button:hover,
 .btn:hover {
-  color: var(--white);
+  color: var(--primary-design);
   background: var(--primary-700);
   box-shadow: var(--shadow-2);
 }
