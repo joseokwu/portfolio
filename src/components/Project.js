@@ -1,17 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-const Project = ({ name, image, url }) => {
+const Project = ({ name, image, url, git }) => {
   return (
-    <Wrapper className='project' href={url} target='_blank' rel='noreferrer'>
-      <img src={image} className='img' alt='project' />
-      <footer>
-        <h5>{name}</h5>
-      </footer>
-    </Wrapper>
+    <>
+      <Wrapper className='project' target='_blank' rel='noreferrer'>
+        <img src={image} className='img' alt='project' />
+        <footer>
+          <h5>{name}</h5>
+        </footer>
+        <div className='view-container'>
+          {url && <button onClick={() => window.open(url)}>View Live</button>}
+          {git && (
+            <button onClick={() => window.open(git)}>View Source Code</button>
+          )}
+        </div>
+      </Wrapper>
+    </>
   );
 };
 
-const Wrapper = styled.a`
+const Wrapper = styled.div`
   border-radius: var(--borderRadius);
   background: var(--white);
   box-shadow: var(--shadow-1);
@@ -20,6 +28,20 @@ const Wrapper = styled.a`
   &:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-2);
+  }
+  .view-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    button {
+      background-color: var(--primary-design);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-2);
+      }
+    }
   }
   .img {
     width: 100%;

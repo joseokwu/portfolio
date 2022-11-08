@@ -14,23 +14,17 @@ import RegularProjects from './RegularProjects';
 import Menu from './Menu';
 const Projects = () => {
   const [state, setState] = useState('front-end');
-  const [loading, setLoading] = useState();
 
   const changePortfolio = (id) => {
-    setLoading(true);
     setState(id);
-    setLoading(false);
   };
 
-  if (loading) {
-    return <div className='loading'></div>;
-  }
   if (state === 'front-end') {
     return (
       <Wrapper>
         <Menu changePortfolio={changePortfolio} state={state} />
         <LargeProjects large_projects={frontend_large_projects} />
-        <RegularProjects regular_projects={frontend_regular_projects} />
+        {/* <RegularProjects regular_projects={frontend_regular_projects} /> */}
       </Wrapper>
     );
   }
@@ -39,14 +33,15 @@ const Projects = () => {
       <Wrapper>
         <Menu changePortfolio={changePortfolio} state={state} />
         <LargeProjects large_projects={backend_large_projects} />
-        <RegularProjects regular_projects={backend_regular_projects} />
+        {/* <RegularProjects regular_projects={backend_regular_projects} /> */}
       </Wrapper>
     );
   }
   return (
     <Wrapper>
       <Menu changePortfolio={changePortfolio} state={state} />
-      <LargeProjects large_projects={fullstack_projects} />
+      <LargeProjects large_projects={frontend_large_projects} />
+      {/* <RegularProjects regular_projects={frontend_regular_projects} /> */}
     </Wrapper>
   );
 };

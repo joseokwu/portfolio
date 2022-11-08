@@ -1,16 +1,16 @@
 const menu = [
   {
-    name: 'Front End',
+    name: 'Websites',
     value: 'front-end',
   },
   {
-    name: 'Back End',
+    name: 'APIs',
     value: 'back-end',
   },
-  {
-    name: 'Full Stack',
-    value: 'full-stack',
-  },
+  // {
+  //   name: 'Full Stack',
+  //   value: 'full-stack',
+  // },
 ];
 
 export default menu;

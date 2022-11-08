@@ -1,10 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import heroImg1 from '../assets/hero-1.svg';
-import { BiFace } from 'react-icons/bi';
+import { BiFace, BiPhoneCall } from 'react-icons/bi';
 import { FaDesktop } from 'react-icons/fa';
+import { AiOutlineMail } from 'react-icons/ai';
+import FormWithBtns from './FormWithBtns';
 
 const Hero = () => {
+  const btnData = [
+    'Javascript',
+    'Typescript',
+    'ReactJs',
+    'NextJs',
+    'CSS',
+    'SASS',
+    'NodeJs',
+    'ExpressJs',
+    'NestJs',
+    'MongoDB',
+    'SQL',
+    'Docker',
+    'Kubernetes',
+    'Microservices',
+  ];
   return (
     <Wrapper>
       <div className='hero-center'>
@@ -17,17 +35,39 @@ const Hero = () => {
               </span>
             </h4>
             <h5>
-              Full Stack Developer(Javascript)
+              Full Stack Engineer(Javascript)
               <span>
                 <FaDesktop />
               </span>
             </h5>
+            <div className='title-bottom'>
+              {' '}
+              <h5>
+                Phone : +2348069219247
+                <span>
+                  <BiPhoneCall />
+                </span>
+              </h5>
+              <h5 className='email'>
+                Email : okwuosaifechidelu@gmail.com
+                <span>
+                  <AiOutlineMail />
+                </span>
+              </h5>
+            </div>
           </div>
-          <p>
-            Projects are the most practical way to show skill. With
-            <span> React, NodeJS, ExpressJS, MongoDB </span>and many others, I
-            have built (and continue to build) quite a few projects to emphasize
-            my capabilities. Feel free to view these interesting projects below.
+          <p className='details'>
+            Accomplished, multi-faceted web engineer with a history of elegant
+            performance in roles requiring exceptional strengths in application
+            planning, execution, and extensive monitoring. Recognized throughout
+            career for a professional, noteworthy engineering style that results
+            in high levels of productivity, clean and optimized codebase
+            efficiency, and team cohesion around a shared vision, hence creating
+            the environments needed for the best work. Highly effective
+            communication and leadership skills, in addition to extensive
+            strengths in collaborating across organizational boundaries and
+            providing critical data, reports, and recommendations to senior
+            leadership teams.
           </p>
           <div className='links'>
             <a
@@ -46,7 +86,17 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        <img src={heroImg1} alt='web development' className='img' />
+        <div className='hero-left'>
+          <div>
+            <FormWithBtns btnData={btnData} buttonsLabel='Skill Set' />
+          </div>
+          <img
+            src={heroImg1}
+            alt='web development'
+            className='img'
+            height={400}
+          />
+        </div>
       </div>
     </Wrapper>
   );
@@ -58,18 +108,37 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 2rem;
+
   img {
     display: none;
   }
   .hero-center {
     width: 90vw;
     max-width: var(--max-width);
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .details {
+      font-size: 1rem;
+    }
   }
   .tag {
     background: var(--grey-200);
     border-radius: var(--borderRadius);
     margin-top: 1.5rem;
+    padding: 1rem;
+
+    .email {
+      text-transform: lowercase;
+    }
+
+    .title-bottom {
+      /* display: flex;
+      justify-content: space-between; */
+    }
   }
   .tag h4 {
     font-size: 1.4rem;
